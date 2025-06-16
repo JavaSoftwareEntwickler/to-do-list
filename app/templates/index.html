@@ -15,11 +15,17 @@
     </form>
     <ul>
       {% for task in tasks %}
-        <li class="flex justify-between py-2 border-b">
+        <li class="grid grid-cols-2 py-2 border-b">
+          
           <span class="{{ 'line-through text-gray-400' if task.completed else '' }}">
             {{ task.title }}
           </span>
-          <a href="/toggle/{{ task.id }}" class="text-sm text-blue-500 hover:underline">✓</a>
+
+          <!-- Delete -->
+          <form class="text-right"action="/delete/{{ task.id }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare questo task?')">
+            <a href="/toggle/{{ task.id }}" class="text-right text-sm text-blue-500 hover:underline">✓</a>
+            <button type="submit" class="text-right text-red-500 hover:underline">🗑️</button>
+          </form>
         </li>
       {% endfor %}
     </ul>

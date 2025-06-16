@@ -27,3 +27,10 @@ def toggle_task(task_id):
     db.session.commit()
     return redirect('/')
 
+@main.route('/delete/<int:task_id>', methods=['POST'])
+def delete_task(task_id):
+    task = Task.query.get(task_id)
+    if task:
+        db.session.delete(task)
+        db.session.commit()
+    return redirect('/')
