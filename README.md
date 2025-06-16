@@ -128,7 +128,7 @@ Le dipendenze si trovano nel file `requirements.txt`. Le principali sono:
 
 ---
 
-## 📄 Licenza
+## 📄 Licenza [MIT](LICENSE)
 
 Distribuito con licenza MIT. Sentiti libero di riutilizzare e modificare il progetto.
 
