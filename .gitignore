@@ -1,0 +1,45 @@
+# Ambiente virtuale
+venv/
+VENV/
+.env/
+.venv/
+
+# Database SQLite
+*.db
+*.sqlite3
+
+# File temporanei di Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configurazioni IDE/editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log, cache e temp files
+*.log
+*.bak
+*.swp
+*.tmp
+
+# Cache pip
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Flask/Macchina locale
+instance/
+*.pid
+
+# HTML cache (browser dev)
+app/static/.cache/

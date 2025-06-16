@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ToDo List</title>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-md mx-auto mt-10 p-4 bg-white rounded shadow">
+    <h1 class="text-xl font-bold mb-4">La mia ToDo List 📝</h1>
+    <form method="POST" action="/add" class="flex gap-2 mb-4">
+      <input name="title" class="flex-1 border p-2 rounded" placeholder="Nuovo task..." required />
+      <button class="bg-blue-500 text-white px-4 rounded">Aggiungi</button>
+    </form>
+    <ul>
+      {% for task in tasks %}
+        <li class="flex justify-between py-2 border-b">
+          <span class="{{ 'line-through text-gray-400' if task.completed else '' }}">
+            {{ task.title }}
+          </span>
+          <a href="/toggle/{{ task.id }}" class="text-sm text-blue-500 hover:underline">✓</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
